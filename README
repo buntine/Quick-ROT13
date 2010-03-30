@@ -1,0 +1,22 @@
+************************************
+**   QUICK ROT 13/47 
+**   Andrew Buntine, 2010
+**   Version 0.5.7.4.2.hi.low.1.0
+************************************
+
+Introduction.
+
+A Mozilla Firefox extension to quickly apply a ROT13 or ROT47 substitution cipher on an arbitrary body of code.
+
+It's useful for people who require this functionality quickly without wading through shitloads of additional features.
+
+Use it by selecting some text, right-clicking and then selecting the approprite cipher.
+
+
+Explanation.
+
+ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple substitution cipher used in online forums as a means of hiding spoilers, punchlines, puzzle solutions, and offensive materials from the casual glance. ROT13 has been described as the "Usenet equivalent of a magazine printing the answer to a quiz upside down".[1] ROT13 is a variation of the Caesar cipher, developed in ancient Rome.
+
+ROT13 is its own inverse; that is, to undo ROT13, the same algorithm is applied, so the same action can be used for encoding and decoding. The algorithm provides minimal cryptographic security, and is often cited as a canonical example of weak encryption. ROT13 has inspired a variety of letter and word games on-line, and is frequently mentioned in newsgroup conversations.
+
+Read more: http://en.wikipedia.org/wiki/ROT13
