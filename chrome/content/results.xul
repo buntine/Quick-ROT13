@@ -4,11 +4,13 @@
 <dialog xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         id="quick_rot_results"
-        title="Ciphered text"
-        buttons="accept,extra1"
+        title="Quick ROT - Results"
+        buttons="accept,extra1,extra2"
         buttonlabelextra1="Copy to clipboard"
+        buttonlabelextra2="Re-apply cipher"
         width="600" height="360">
 
+  <label value="The ciphered text is below:" control="quick_rot_results_text" />
   <textbox multiline="true" value="Yo" id="quick_rot_results_text" rows="15" cols="40" />
 
 </dialog>
