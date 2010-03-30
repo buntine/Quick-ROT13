@@ -1,0 +1,3 @@
+content     quick_rot    chrome/content/
+
+overlay chrome://browser/content/browser.xul chrome://quick_rot/content/menu_overlay.xul

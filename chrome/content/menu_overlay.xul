@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<overlay id="quick_rot_overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml" >	 	
+
+  <popup id="contentAreaContextMenu">
+    <menu id="quick_rot_menu" label="Quick ROT">
+      <menupopup id="quick_rot_submenu">
+        <menuitem id="quick_rot_submenu_13" label="ROT13" />
+        <menuitem id="quick_rot_submenu_47" label="ROT47" />
+      </menupopup>
+    </menu>
+  </popup>
+
+</overlay>
+
