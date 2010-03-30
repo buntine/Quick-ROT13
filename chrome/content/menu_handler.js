@@ -26,12 +26,18 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   pub.on_rot13_clicked = function() {
-    alert("ROT13");
+    open_dialog("13");
   };
 
   pub.on_rot47_clicked = function() {
-    alert("ROT47");
+    open_dialog("47");
   };
+
+  // Private procedure to open the results dialog. Used only for it's side-effects.
+  function open_dialog(type) {
+    var file = "chrome://quick_rot/content/results.xul";
+    window.openDialog(file, "", "centerscreen,chrome,dialog,modal").focus();
+  }
 
   return pub;
 }();
