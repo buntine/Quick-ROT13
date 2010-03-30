@@ -13,11 +13,12 @@ com.andrewbuntine.quick_rot.results_handler = function(){
 
   pub.init = function() {
     this.textarea = document.getElementById("quick_rot_results_text");
+    this.ciphered_text = window.arguments[0].text;
+    this.cipher_type = window.arguments[0].type;
 
-    var ciphered_text = window.arguments[0].text;
-    this.textarea.value = ciphered_text;
+    this.textarea.value = this.ciphered_text;
 
-    // Setup event listeners.
+    // Attach event listeners.
     window.addEventListener("dialogextra1", function() { pub.on_copy_clicked(); }, false);
     window.addEventListener("dialogextra2", function() { pub.on_reapply_clicked(); }, false);
   };
@@ -29,9 +30,7 @@ com.andrewbuntine.quick_rot.results_handler = function(){
 
   // Re-applies the ROT-n cipher to the content in the textarea.
   pub.on_reapply_clicked = function() {
-    var type = window.arguments[0].type;
-
-    alert(type);
+    alert(this.cipher_type);
   };
 
   return pub;

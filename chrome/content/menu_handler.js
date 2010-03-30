@@ -15,7 +15,7 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   pub.init = function() {
     this.menu_item = document.getElementById("quick_rot_menu");
 
-    // Attach event handlers.
+    // Attach event listeners.
     document.getElementById("contentAreaContextMenu").addEventListener("popupshowing", function() { pub.on_menu_opening(); }, false);
     document.getElementById("quick_rot_submenu_13").addEventListener("command", function() { pub.on_rot13_clicked(); }, false);
     document.getElementById("quick_rot_submenu_47").addEventListener("command", function() { pub.on_rot47_clicked(); }, false);
@@ -33,7 +33,7 @@ com.andrewbuntine.quick_rot.event_handler = function(){
     open_dialog("47");
   };
 
-  // Private procedure to open the results dialog. Used only for it's side-effects.
+  // Private procedure to open the results dialog. We're only interested in it's side-effects.
   function open_dialog(rot_type) {
     var file = "chrome://quick_rot/content/results.xul";
     var params = { text : "ciphered text",
