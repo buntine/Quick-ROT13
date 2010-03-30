@@ -17,10 +17,20 @@ com.andrewbuntine.quick_rot.event_handler = function(){
 
     // Attach event handlers.
     document.getElementById("contentAreaContextMenu").addEventListener("popupshowing", function() { pub.on_menu_opening(); }, false);
+    document.getElementById("quick_rot_submenu_13").addEventListener("command", function() { pub.on_rot13_clicked(); }, false);
+    document.getElementById("quick_rot_submenu_47").addEventListener("command", function() { pub.on_rot47_clicked(); }, false);
   };
 
   pub.on_menu_opening = function() {
     this.menu_item.disabled = (getBrowserSelection().length == 0);
+  };
+
+  pub.on_rot13_clicked = function() {
+    alert("ROT13");
+  };
+
+  pub.on_rot47_clicked = function() {
+    alert("ROT47");
   };
 
   return pub;

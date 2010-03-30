@@ -6,7 +6,7 @@
 
 Introduction.
 
-A Mozilla Firefox extension to quickly apply a ROT13 or ROT47 substitution cipher on an arbitrary body of code.
+A Mozilla Firefox extension to quickly apply a ROT13 or ROT47 substitution cipher on an arbitrary body of text.
 
 It's useful for people who require this functionality quickly without wading through shitloads of additional features.
 
