@@ -34,9 +34,12 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   // Private procedure to open the results dialog. Used only for it's side-effects.
-  function open_dialog(type) {
+  function open_dialog(rot_type) {
     var file = "chrome://quick_rot/content/results.xul";
-    window.openDialog(file, "", "centerscreen,chrome,dialog,modal").focus();
+    var params = { text : "ciphered text",
+                   type : rot_type };
+
+    window.openDialog(file, "", "centerscreen,chrome,dialog,modal", params).focus();
   }
 
   return pub;
