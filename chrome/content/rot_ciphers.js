@@ -20,7 +20,12 @@ com.andrewbuntine.quick_rot.rot_ciphers = function(){
   };
 
   function rot_13(text) { 
-    return "rot 13";
+    // Credit: Jonas Raoni Soares Silva (http://jsfromhell.com/string/rot13)
+    var result = text.replace(/[a-zA-Z]/g, function(c){
+                   return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+                 });
+
+    return result;
   }
 
   function rot_47(text) {

@@ -24,7 +24,7 @@ com.andrewbuntine.quick_rot.results_handler = function(){
     window.addEventListener("dialogextra2", function() { pub.on_reapply_clicked(); }, false);
   };
 
-  // Copies the text to the local clipboard.
+  // Copies the textarea contents to the local clipboard.
   pub.on_copy_clicked = function() {
     var clipboard = Components.classes["@mozilla.org/widget/clipboardhelper;1"].
                     getService(Components.interfaces.nsIClipboardHelper);
@@ -33,8 +33,7 @@ com.andrewbuntine.quick_rot.results_handler = function(){
 
   // Re-applies the ROT-n cipher to the content in the textarea.
   pub.on_reapply_clicked = function() {
-    var text = this.textarea.value;
-    var result = rot_ciphers.apply_cipher(text, this.cipher_type);
+    var result = rot_ciphers.apply_cipher(this.textarea.value, this.cipher_type);
 
     this.textarea.value = result;
   };
