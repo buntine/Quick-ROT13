@@ -39,7 +39,7 @@ com.andrewbuntine.quick_rot.event_handler = function(){
     var params = { text : ciphered_text,
                    type : rot_type };
 
-    window.openDialog(file, "", "centerscreen,chrome,dialog,modal", params).focus();
+    window.openDialog(file, "", "centerscreen,chrome,dialog", params).focus();
   }
 
   return pub;
