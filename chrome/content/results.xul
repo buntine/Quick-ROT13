@@ -10,6 +10,7 @@
         buttonlabelextra2="Re-apply cipher"
         width="600" height="360">
 
+  <script type="application/x-javascript" src="chrome://quick_rot/content/rot_ciphers.js" />
   <script type="application/x-javascript" src="chrome://quick_rot/content/results_handler.js" />
 
   <label value="The ciphered text is below:" control="quick_rot_results_text" />

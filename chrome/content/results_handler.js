@@ -10,6 +10,7 @@ window.addEventListener("load", function() { com.andrewbuntine.quick_rot.results
 
 com.andrewbuntine.quick_rot.results_handler = function(){
   var pub = {};
+  var rot_ciphers = com.andrewbuntine.quick_rot.rot_ciphers;
 
   pub.init = function() {
     this.textarea = document.getElementById("quick_rot_results_text");
@@ -25,12 +26,17 @@ com.andrewbuntine.quick_rot.results_handler = function(){
 
   // Copies the text to the local clipboard.
   pub.on_copy_clicked = function() {
-    alert("Copied");
+    var clipboard = Components.classes["@mozilla.org/widget/clipboardhelper;1"].
+                    getService(Components.interfaces.nsIClipboardHelper);
+    clipboard.copyString(this.textarea.value);
   };
 
   // Re-applies the ROT-n cipher to the content in the textarea.
   pub.on_reapply_clicked = function() {
-    alert(this.cipher_type);
+    var text = this.textarea.value;
+    var result = rot_ciphers.apply_cipher(text, this.cipher_type);
+
+    this.textarea.value = result;
   };
 
   return pub;

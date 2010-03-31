@@ -27,7 +27,7 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   pub.on_rot_clicked = function(rot_type) {
-    var text = "cipher me";
+    var text = getBrowserSelection();
     var result = rot_ciphers.apply_cipher(text, rot_type);
 
     open_dialog(result, rot_type);
