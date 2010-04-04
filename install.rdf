@@ -20,5 +20,6 @@
     <em:description>Quickly apply the ROT13 or ROT47 substitution ciphers to arbitrarily selected text.</em:description>
     <em:creator>Andrew Buntine</em:creator>
     <em:homepageURL>http://www.andrewbuntine.com/</em:homepageURL>
+    <em:homepage>http://www.andrewbuntine.com/</em:homepage>
   </Description> 
 </RDF>
