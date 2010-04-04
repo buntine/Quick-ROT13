@@ -14,10 +14,9 @@ com.andrewbuntine.quick_rot.results_handler = function(){
 
   pub.init = function() {
     this.textarea = document.getElementById("quick_rot_results_text");
-    this.ciphered_text = window.arguments[0].text;
     this.cipher_type = window.arguments[0].type;
 
-    this.textarea.value = this.ciphered_text;
+    this.textarea.value = window.arguments[0].text;
 
     // Attach event listeners.
     window.addEventListener("dialogextra1", function() { pub.on_copy_clicked(); }, false);
