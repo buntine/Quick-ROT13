@@ -23,11 +23,11 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   pub.on_menu_opening = function() {
-    this.menu_item.disabled = (getBrowserSelection().length == 0);
+    this.menu_item.disabled = (content.getSelection().length === 0);
   };
 
   pub.on_rot_clicked = function(rot_type) {
-    var text = getBrowserSelection();
+    var text = content.getSelection();
     var result = rot_ciphers.apply_cipher(text, rot_type);
 
     open_dialog(result, rot_type);

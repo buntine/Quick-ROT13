@@ -16,7 +16,7 @@ com.andrewbuntine.quick_rot.rot_ciphers = function(){
   };
 
   pub.apply_cipher = function(text, rot_type) {
-    return cipher_funcs[rot_type](text);
+    return cipher_funcs[rot_type](text.toString());
   };
 
   function rot_13(text) { 
