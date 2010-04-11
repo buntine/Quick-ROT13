@@ -30,7 +30,8 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   pub.on_rot_clicked = function(rot_type) {
-    var text = content.getSelection();
+    //var text = content.getSelection();
+    var text = get_selection(document.popupNode);
     var result = rot_ciphers.apply_cipher(text, rot_type);
 
     open_dialog(result, rot_type);
@@ -57,6 +58,13 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   // Returns true if the element has a selection range.
   function has_selection(element) {
     return (element.selectionEnd > element.selectionStart);
+  }
+
+  // Returns the currently selected page text (also works with text elements).
+  function get_selection(element) {
+    return is_textual_element(element) ?
+             element.value.substr(element.selectionStart, (element.selectionEnd - element.selectionStart)) :
+             content.getSelection();
   }
 
   return pub;
