@@ -23,7 +23,10 @@ com.andrewbuntine.quick_rot.event_handler = function(){
   };
 
   pub.on_menu_opening = function() {
-    this.menu_item.disabled = (content.getSelection().length === 0);
+    var element = document.popupNode;
+    var enable = is_textual_element(element) ? has_selection(element)
+	           : (content.getSelection().toString().length > 0);
+    this.menu_item.disabled = !enable;
   };
 
   pub.on_rot_clicked = function(rot_type) {
@@ -33,13 +36,27 @@ com.andrewbuntine.quick_rot.event_handler = function(){
     open_dialog(result, rot_type);
   };
 
-  // Private procedure to open the results dialog. We're only interested in it's side-effects.
+
+  // Private members defined below.
+
+  // Opens the results dialog. We're only interested in it's side-effects.
   function open_dialog(ciphered_text, rot_type) {
     var file = "chrome://quick_rot/content/results.xul";
     var params = { text : ciphered_text,
                    type : rot_type };
 
     window.openDialog(file, "", "centerscreen,chrome,dialog", params).focus();
+  }
+
+  // Returns true if the element is a TextArea or Input element.
+  function is_textual_element(element) {
+    return ((element instanceof HTMLInputElement && element.attributes.getNamedItem("type").value === 'text') ||
+            (element instanceof HTMLTextAreaElement));
+  }
+
+  // Returns true if the element has a selection range.
+  function has_selection(element) {
+    return (element.selectionEnd > element.selectionStart);
   }
 
   return pub;
